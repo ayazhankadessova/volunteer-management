@@ -4,9 +4,8 @@
 
 Event and Volunteer Management system is a robust web application that simplifies event and volunteer management. It allows administrators to create, edit, and delete events, and manage volunteer registrations. Volunteers can register themselves, and admins can manually add and edit volunteer information. The system provides detailed views of events and volunteer profiles, ensuring effective event planning and execution.
 
-![Screenshot](Flow_vol-management.png=250x)
-![Screenshot](mainpage.png=250x)
-
+<img src="Flow_vol-management.png" alt="drawing" width="200"/>
+<img src="mainpage.png" alt="drawing" width="200"/>
 
 ## Table of Contents
 
