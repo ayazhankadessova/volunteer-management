@@ -38,7 +38,7 @@ Password: 1234
 Just browse the website
 ```
 
-## <a id="Project-setup"></a>🚀 Project Setup Frontend
+## <a id="Project-setup1"></a>🚀 Project Setup Frontend
 
 _run backend & frontend_
 _ad your MongoDB URL_
