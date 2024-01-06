@@ -1,0 +1,38 @@
+[
+  {
+    "_id": {
+      "$oid": "6521f5d66b1edceec5e89860"
+    },
+    "email": "john.doe@example.com",
+    "password": "password123",
+    "name": "John Doe",
+    "contact": "+123456789",
+    "age_group": "26-30",
+    "about_me": "I enjoy hiking and reading.",
+    "terms_condition": true
+  },
+  {
+    "_id": {
+      "$oid": "65223a96522f635fdc961afc"
+    },
+    "email": "sara.smith@example.com",
+    "password": "securepass",
+    "name": "Sara Smith",
+    "contact": "+987654321",
+    "age_group": "18-25",
+    "about_me": "Passionate about photography and travel.",
+    "terms_condition": true
+  },
+  {
+    "_id": {
+      "$oid": "65223a9f522f635fdc961afd"
+    },
+    "email": "michael.jones@example.com",
+    "password": "mysecretpass",
+    "name": "Michael Jones",
+    "contact": "+111223344",
+    "age_group": "40+",
+    "about_me": "Avid cyclist and tech enthusiast.",
+    "terms_condition": true
+  }
+]

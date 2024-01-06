@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Event Details</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/date-fns@2.30.0/index.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div >
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">Navbar</span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/event">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/become/volunteer">Become Volunteer</a>
+                        </li>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container-fluid">
+      <br />
+      <div class="row mb-3">
+        <div class="col-sm-6">
+          <nav aria-label="breadcrumb" >
+            <ol class="breadcrumb d-inline-flex p-2 bg-light">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a aria-current="page">Events</a></li>
+            </ol>
+        </nav>
+        </div>
+        <div class="col-sm-6 text-end">
+          <form action="/event/new" method="GET">
+            <button type="submit" class="btn btn-primary">New</button>
+          </form>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <% events.forEach((event) => { %>
+        <div class="col-md-4">
+          <div class="card">
+            <a href="/event/detail/<%= event._id %>">
+              <img
+                src="<%= event.eventImage %>"
+                class="card-img-top"
+                alt="Event Image"
+              />
+            </a>
+            <div class="card-body" style="height: 200px">
+              <h5
+                class="card-title card-title-new"
+                style="text-overflow: ellipsis"
+              >
+                <%= event.eventTitle %>
+              </h5>
+              <p
+                class="card-text card-text-body"
+                style="text-overflow: ellipsis"
+              >
+                <%= event.eventDescription %>
+                <br />
+                <br />
+              </p>
+              <small class="text-muted">
+                Last updated <%= dateFns.formatDistanceStrict( new
+                Date(event.modifiedAt), Date.now(), { addSuffix: true, } ) %>
+              </small>
+              <div class="text-end">
+                <a href="/event/edit/<%= event._id %>" class="btn btn-primary"
+                  >Edit</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <% if (page > 1) { %>
+        <li class="page-item">
+          <a
+            class="page-link"
+            href="/event?page=<%= page - 1 %>&perPage=<%= perPage %>"
+            >Previous</a
+          >
+        </li>
+        <% } else { %>
+        <li class="page-item disabled">
+          <a class="page-link" href="#">Previous</a>
+        </li>
+        <% } %> <% for (let i = 1; i <= totalPages; i++) { %>
+        <li class="page-item">
+          <a
+            class="page-link"
+            href="/event?page=<%= i %>&perPage=<%= perPage %>"
+            ><%= i %></a
+          >
+        </li>
+        <% } %> <% if (page < totalPages) { %>
+        <li class="page-item">
+          <a
+            class="page-link"
+            href="/event?page=<%= page + 1 %>&perPage=<%= perPage %>"
+            >Next</a
+          >
+        </li>
+        <% } else { %>
+        <li class="page-item disabled">
+          <a class="page-link" href="#">Next</a>
+        </li>
+        <% } %>
+      </ul>
+    </nav>
+
+    <!-- Add Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
