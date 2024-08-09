@@ -9,12 +9,12 @@ const options = ref({})
 const series = ref([])
 
 onMounted(async () => {
-  var response = await fetch('/api/volunteer/stats/eventOrganizer', {
+  let response = await fetch('/api/volunteer/stats/eventOrganizer', {
     headers: {
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     },
   })
-  var json = await response.json()
+  let json = await response.json()
   options.value = { labels: json.map((item) => item._id) }
   series.value = json.map((item) => item.total)
 })

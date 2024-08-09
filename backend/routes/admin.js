@@ -1,7 +1,7 @@
-var express = require('express')
-var router = express.Router()
+let express = require('express')
+let router = express.Router()
 const { connectToDB, ObjectId } = require('../utils/db')
-var passport = require('passport')
+let passport = require('passport')
 
 /* Handle the Volunteer Registration Form */
 router.post('/newVolunteer', async function (req, res) {

@@ -147,7 +147,7 @@ watchEffect(() => {
 })
 
 const submitVolunteer = async function () {
-  var url, method, headers
+  let url, method, headers
   // console.log(userRole)
   if (userRole.value === 'admin') {
     url =

@@ -1,15 +1,15 @@
-var createError = require('http-errors')
-var express = require('express')
-var path = require('path')
-var cookieParser = require('cookie-parser')
-var logger = require('morgan')
+let createError = require('http-errors')
+let express = require('express')
+let path = require('path')
+let cookieParser = require('cookie-parser')
+let logger = require('morgan')
 const { isAdmin, isVolunteer } = require('./utils/auth')
 
 process.env.TOKEN_SECRET = 'secret'
 
-var jwt = require('jsonwebtoken')
-var passport = require('passport')
-var BearerStrategy = require('passport-http-bearer').Strategy
+let jwt = require('jsonwebtoken')
+let passport = require('passport')
+let BearerStrategy = require('passport-http-bearer').Strategy
 // extract toke out of the request
 // the verify it with jwt
 // if verify -> done + decoded data
@@ -24,16 +24,16 @@ passport.use(
   })
 )
 
-var indexRouter = require('./routes/index')
-var eventRouter = require('./routes/event')
-var apiEventRouter = require('./routes/apiEvents')
-var becomeRouter = require('./routes/become')
-var volunteersRouter = require('./routes/volunteers')
-var adminRouter = require('./routes/admin')
+let indexRouter = require('./routes/index')
+let eventRouter = require('./routes/event')
+let apiEventRouter = require('./routes/apiEvents')
+let becomeRouter = require('./routes/become')
+let volunteersRouter = require('./routes/volunteers')
+let adminRouter = require('./routes/admin')
 
 process.env.TOKEN_SECRET = 'secret'
 
-var app = express()
+let app = express()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
@@ -67,10 +67,10 @@ app.use(
   isAdmin,
   adminRouter
 )
-app.use('/api', apiEventRouter) 
+app.use('/api', apiEventRouter)
 
 // app.use('/api', apiEventRouter)
-app.use('/become', becomeRouter) 
+app.use('/become', becomeRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

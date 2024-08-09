@@ -1,15 +1,15 @@
-var express = require('express')
-var router = express.Router()
+let express = require('express')
+let router = express.Router()
 const { connectToDB, ObjectId } = require('../utils/db')
 const { formatDistanceStrict } = require('date-fns')
 const { generateToken } = require('../utils/auth')
-var passport = require('passport')
+let passport = require('passport')
 
 router.post('/api/login', async function (req, res, next) {
   const db = await connectToDB()
   try {
     // check if the user exists
-    var user = await db
+    let user = await db
       .collection('volunteers')
       .findOne({ email: req.body.email })
     if (!user) {

@@ -1,8 +1,8 @@
-var express = require('express')
-var router = express.Router()
+let express = require('express')
+let router = express.Router()
 const { connectToDB, ObjectId } = require('../utils/db')
 const { formatDistanceStrict } = require('date-fns')
-var passport = require('passport')
+let passport = require('passport')
 
 const { generateToken, isVolunteer } = require('../utils/auth')
 

@@ -121,8 +121,8 @@ const withdrawFromEvent = async function (volunteerId) {
 }
 
 const submitEvent = async function () {
-  var url = '/api/admin/event'
-  var method = 'POST'
+  let url = '/api/admin/event'
+  let method = 'POST'
 
   if (route.name == 'update-event') {
     url = url + '/edit/' + event.value._id

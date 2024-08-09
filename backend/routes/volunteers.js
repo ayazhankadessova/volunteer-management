@@ -1,9 +1,9 @@
-var express = require('express')
-var router = express.Router()
+let express = require('express')
+let router = express.Router()
 const { connectToDB, ObjectId } = require('../utils/db')
 const { formatDistanceStrict } = require('date-fns')
 const { generateToken } = require('../utils/auth')
-var passport = require('passport')
+let passport = require('passport')
 
 router.get('/me', async function (req, res) {
   const db = await connectToDB()
