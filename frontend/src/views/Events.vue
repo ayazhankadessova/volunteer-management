@@ -38,8 +38,7 @@ const joinEvent = async (eventId) => {
   if (response.ok) {
     alert(responseData.message) // Display the success message
   } else {
-    alert(responseData.message) // Display the error message
-    // throw new Error(response.statusText)
+    throw new Error(response.statusText)
   }
 }
 
