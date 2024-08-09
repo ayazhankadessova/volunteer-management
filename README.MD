@@ -1,6 +1,6 @@
 ## <a id="about"></a>📖 About
 
-### Created for COMP3047: Software Engineering
+### Live Demo: https://volunteer-manager.netlify.app (some APIs no longer work as they were hosted as part of the course)
 
 Event and Volunteer Management system is a robust web application that simplifies event and volunteer management. It allows administrators to create, edit, and delete events, and manage volunteer registrations. Volunteers can register themselves, and admins can manually add and edit volunteer information. The system provides detailed views of events and volunteer profiles, ensuring effective event planning and execution.
 
