@@ -2,7 +2,7 @@
 
 1. Git clone
 
-> git clone https://github.com/UG-CS-HKBU/project-express-fall2023-ayazhankadessova.git
+> git clone *repo*
 
 2. Install needed packages
 
